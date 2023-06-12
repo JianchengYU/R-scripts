@@ -26,15 +26,16 @@ compare_variants <- function(sample_names) {
   }
   ## Plot the results
   plot <- ggplot(all_data, aes(x = Sample, y = Variants, fill = Sample)) +
-    geom_bar(stat = "identity", width = 0.5, color = "black") +
+    geom_bar(stat = "identity", width = 0.75, color = "black") +
     labs(x = " ", y = "Variant Number", title = paste0("Variant Count Comparison")) +
     theme_minimal()
   theme(
-    plot.title = element_text( size = rel(3), face = "bold"),
-    legend.text = element_text( size = rel(3)),
-    axis.title.x = element_text(size = rel(3)),
-    axis.title.y = element_text(size = rel(3)))
-  ggsave(plot, file = "./results/variant_filter_plot.png", width = 160, height = 80,limitsize = FALSE)
+    plot.title = element_text(size = rel(14), face = "bold", hjust = 0.5),
+    legend.text = element_text(size = rel(12)),
+    axis.title.x = element_text(size = rel(12)),
+    axis.title.y = element_text(size = rel(12))
+    )
+  ggsave(plot, file = "./results/variant_filter_plot.png", width = 1600*length(sample_names), height = 1600, units = "px")
   ##Save data to file
   write.csv(all_data, file = "./results/variant_filter.csv", row.names = FALSE)
   return(list(png_file = "./results/variant_filter_plot.png", csv_file = "./results/variant_filter.csv"))
