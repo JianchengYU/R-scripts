@@ -37,6 +37,6 @@ compare_variants <- function(sample_names) {
   ggsave(plot, file = "./results/variant_filter_plot.png", width = 160, height = 80,limitsize = FALSE)
   ##Save data to file
   write.csv(all_data, file = "./results/variant_filter.csv", row.names = FALSE)
-  return(list(png_file = "./results/variant_filter_plot.pdf", csv_file = "./results/variant_filter.csv"))
+  return(list(png_file = "./results/variant_filter_plot.png", csv_file = "./results/variant_filter.csv"))
   dev.off()
 }
