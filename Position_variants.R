@@ -39,6 +39,6 @@ for (tsv_file in tsv_files) {
 # Combine the plots into a single grid
 grid_plot <- do.call(grid.arrange, plots)
 # Save the grid plot as a PNG file
-output_file <- "./results/Variants Distribution_Depths.png"
+output_file <- "./results/Variants Distribution.png"
 ggsave(grid_plot, filename = output_file, width = 16, height = 8)
 dev.off()
