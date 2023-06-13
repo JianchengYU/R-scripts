@@ -19,6 +19,12 @@ for (vcf_file in vcf_files) {
     geom_bar(stat = "identity", fill = "steelblue") +
     labs(x = "Chromosome", y = "Number of SNPs") +
     ggtitle(paste("SNP Chromosomal Distribution -", sample_name))
+    theme(
+    plot.title = element_text(size = 18, hjust = 0.5, face = "bold"),
+    legend.text = element_text(size = 10 ),
+    legend.title = element_text(size = 10 ),
+    axis.title.y = element_text(size = 14 )
+  )
   # Store the plot in the list
   plots[[sample_name]] <- plot
 }
