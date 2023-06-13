@@ -41,3 +41,4 @@ grid_plot <- do.call(grid.arrange, plots)
 # Save the grid plot as a PNG file
 output_file <- "./results/vcf_anno_plots.png"
 ggsave(grid_plot, filename = output_file, width = 16, height = 8)
+dev.off()
